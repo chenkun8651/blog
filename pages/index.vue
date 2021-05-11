@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        blog
+        blog1
       </h1>
       <div class="links">
         <a
