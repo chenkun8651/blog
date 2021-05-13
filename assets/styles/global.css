@@ -1,0 +1,5 @@
+/* <a>去掉颜色和链接线 */
+.a-none {
+    color: inherit;
+    text-decoration: inherit;
+}
