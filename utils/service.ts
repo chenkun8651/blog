@@ -1,5 +1,4 @@
 import graphql from './graphql'
-
 import { RepositoryIssue, RepositoryIssues } from '../types/interface'
 
 export const REPO_OWNER = 'chenkun76'
@@ -7,7 +6,7 @@ export const REPO_NAME = 'blog'
 
 // 查询Issues列表
 export const queryPostsFromIssues = () =>
-    graphql<RepositoryIssues>(`
+  graphql<RepositoryIssues>(`
     {
       repository(owner: "${REPO_OWNER}", name: "${REPO_NAME}") {
         issues(
@@ -40,8 +39,8 @@ export const queryPostsFromIssues = () =>
 
 // 根据label查询Issues列表
 export const queryPostsByLabel = (label: string[]) =>
-    graphql<RepositoryIssues>(
-        `
+  graphql<RepositoryIssues>(
+    `
       query queryIssuesByLabel($label: [String!]) {
         repository(owner: "${REPO_OWNER}", name: "${REPO_NAME}") {
           issues(
@@ -70,15 +69,15 @@ export const queryPostsByLabel = (label: string[]) =>
         }
       }
     `,
-        {
-            label,
-        }
-    )
+    {
+      label,
+    }
+  )
 
 // 根据number获取Issues详情
 export const queryPostByNumber = (number: number) =>
-    graphql<RepositoryIssue>(
-        `
+  graphql<RepositoryIssue>(
+    `
     query queryIssueByNumber($number: Int!) {
       repository(owner: "${REPO_OWNER}", name: "${REPO_NAME}") {
         issue(number: $number) {
@@ -97,7 +96,7 @@ export const queryPostByNumber = (number: number) =>
       }
     }
   `,
-        {
-            number,
-        }
-    )
+    {
+      number,
+    }
+  )

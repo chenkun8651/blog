@@ -1,19 +1,19 @@
 <template>
   <div>
-    <Header></Header>
+    <BlogHeader />
     <Nuxt />
-    <Footer></Footer>
+    <BlogFooter />
   </div>
 </template>
 
 <script lang="ts">
-import Header from "../components/header.vue";
-import Footer from "../components/footer.vue";
+import BlogHeader from "../components/blog-header.vue";
+import BlogFooter from "../components/blog-footer.vue";
 
 export default {
   components: {
-    Header,
-    Footer,
+    BlogHeader,
+    BlogFooter,
   },
 };
 </script>

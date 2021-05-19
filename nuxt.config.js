@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'blog',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'zh'
     },
     meta: [
       { charset: 'utf-8' },
@@ -22,9 +22,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/axios.ts',
-    '@/plugins/request.ts',
-    '@/plugins/api.ts'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

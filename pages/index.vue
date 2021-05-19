@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-    <BlogList></BlogList>
+    <IssueList></IssueList>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import BlogList from "./blog-list.vue";
+import IssueList from "./issue/issue-list.vue";
 
 export default Vue.extend({
   components: {
-    BlogList,
+    IssueList,
   },
 });
 </script>
