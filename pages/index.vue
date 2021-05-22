@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import IssueList from "./issue/issue-list.vue";
+import IssueList from "../components/issue-list.vue";
 
 export default Vue.extend({
   components: {

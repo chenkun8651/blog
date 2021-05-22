@@ -1,7 +1,7 @@
 import graphql from './graphql'
 import { RepositoryIssue, RepositoryIssues } from '../types/interface'
 
-export const REPO_OWNER = 'chenkun76'
+export const REPO_OWNER = 'chenkun8651'
 export const REPO_NAME = 'blog'
 
 // 查询Issues列表

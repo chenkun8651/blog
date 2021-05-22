@@ -1,9 +1,10 @@
 <template>
-  <header>
+  <header class="flex">
     <h1>
-      <NuxtLink class="a-none" to="/">chenkun1996.</NuxtLink>
+      <NuxtLink class="a-none" to="/">chenkun8651.</NuxtLink>
     </h1>
-    <div></div>
+    <div class="flex-1"></div>
+    <div>图标</div>
   </header>
 </template>
 

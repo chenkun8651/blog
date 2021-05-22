@@ -1,8 +1,8 @@
 <template>
   <div>
-    <BlogHeader />
+    <BlogHeader></BlogHeader>
     <Nuxt />
-    <BlogFooter />
+    <BlogFooter></BlogFooter>
   </div>
 </template>
 

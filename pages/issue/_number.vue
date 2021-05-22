@@ -1,21 +1,15 @@
 <template>
+  <!-- 博客详情页 -->
   <div>
     <section>
-      <h1 class="my-4 text-3xl font-bold">{{ issue.title }}</h1>
-      <p class="flex items-center text-sm text-secondary">
+      <h1>{{ issue.title }}</h1>
+      <p>
         <span></span>
-        <a
-          :href="issue.url"
-          target="_blank"
-          rel="noopener"
-          class="ml-4 transition-colors text-xs underline hover:text-gray-800 dark:hover:text-gray-400"
-        >
-          在Github上查看
-        </a>
+        <a :href="issue.url" target="_blank" rel="noopener">在Github上查看</a>
       </p>
     </section>
-    <article class="markdown-body max-w-3xl mx-auto md:p-8 mt-16">
-      <div class="markdown-body-content mb-16" v-html="issue.bodyHTML"></div>
+    <article>
+      <div v-html="issue.bodyHTML"></div>
     </article>
   </div>
 </template>

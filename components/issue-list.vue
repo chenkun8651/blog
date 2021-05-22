@@ -7,13 +7,12 @@
 </template>
 
 <script lang="ts">
-import IssueItem from "../../components/issue-item.vue";
-import { queryPostsFromIssues } from "../../utils/service";
+import IssueItem from "./issue-item.vue";
+import { queryPostsFromIssues } from "../utils/service";
 
 export default {
   async created() {
     const res = await queryPostsFromIssues();
-    console.log(res);
   },
   data() {
     return {
