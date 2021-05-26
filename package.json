@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/dayjs": "^1.4.0",
     "@nuxtjs/dotenv": "^1.4.1",
     "@octokit/graphql": "^4.5.8",
     "@primer/css": "^17.0.1",

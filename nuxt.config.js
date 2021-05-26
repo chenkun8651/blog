@@ -32,7 +32,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    "@nuxtjs/dayjs"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -43,5 +44,11 @@ export default {
 
   env: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN
+  },
+
+  // dayjs插件
+  dayjs: {
+    locales: ["zh", "en"],
+    defaultLocale: "zh"
   }
 };

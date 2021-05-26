@@ -1,6 +1,6 @@
 <template>
   <header class="flex items-center py-8 xl:py-16">
-    <h1 class="text-4xl italic transform hover:translate-y-1">
+    <h1 class="text-4xl font-bold italic transform hover:translate-y-1">
       <NuxtLink to="/">chenkun8651</NuxtLink>
     </h1>
     <div class="flex-1"></div>
@@ -8,17 +8,21 @@
       class="relative overflow-hidden w-8 h-8 transition-colors rounded cursor-pointer text-gray-600 hover:bg-gray-200 dark:text-primary dark:hover:bg-gray-800"
       @click="onToggle()"
     >
-      <LightDay v-show="themeState === 'dark'"></LightDay>
-      <NightDay v-show="themeState === 'light'"></NightDay>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <LightDay v-show="themeState === 'dark'"></LightDay>
+        <NightDay v-show="themeState === 'light'"></NightDay>
+      </div>
     </div>
   </header>
 </template>
 
 <script lang="ts">
+import Vue from "vue";
+
 import LightDay from "../components/svg-components/light-day.vue";
 import NightDay from "../components/svg-components/night-day.vue";
 
-export default {
+export default Vue.extend({
   created() {
     if (process.browser) {
       let pref = window.matchMedia("(prefers-color-scheme: light)");
@@ -30,7 +34,7 @@ export default {
   },
   data() {
     return {
-      themeState: "light",
+      themeState: "light" as string,
     };
   },
   components: {
@@ -38,10 +42,10 @@ export default {
     NightDay,
   },
   methods: {
-    onToggle() {
+    onToggle(): void {
       this.themeState = this.themeState === "light" ? "dark" : "light";
       document.documentElement.className = this.themeState;
     },
   },
-};
+});
 </script>

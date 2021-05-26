@@ -15,9 +15,11 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 import { queryPostByNumber } from "../../utils/service.ts";
 
-export default {
+export default Vue.extend({
   async created() {
     // 截取地址中issueID
     this.issueID = ~~window.location.pathname.split("issue/")[1];
@@ -35,8 +37,5 @@ export default {
       },
     };
   },
-};
+});
 </script>
-
-<style>
-</style>
