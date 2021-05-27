@@ -1,21 +1,26 @@
 <template>
-  <div>
-    <div class="flex items-center justify-start mb-3">
-      <div class="mr-4 text-base">
-        {{ this.$dayjs(issueItem.updatedAt).format("YYYY年 M月D日") }}
+  <div class="mb-5 py-2">
+    <div class="mb-2 flex items-center justify-start">
+      <div class="flex items-center">
+        <Date></Date>
+        <div class="ml-0.5 mr-3 text-sm text-gray-700">
+          {{ this.$dayjs(issueItem.createdAt).format("YYYY年 MM月DD日") }}
+        </div>
       </div>
-      <div>
+      <div class="text-sm text-gray-100">
         <div
-          class="p-0.5 text-white rounded-lg bg-opacity-50"
+          class="px-2 rounded"
           v-for="(value, index) in issueItem.labels.nodes"
           :key="index"
           :style="{ backgroundColor: '#' + value.color }"
         >
-          {{ value.name }}
+          <NuxtLink :to="`/label/${value.name}`">
+            {{ value.name }}
+          </NuxtLink>
         </div>
       </div>
     </div>
-    <h1>
+    <h1 class="text-2xl">
       <NuxtLink :to="`/issue/${issueItem.number}`">
         {{ issueItem.title }}
       </NuxtLink>
@@ -26,15 +31,17 @@
 <script lang="ts">
 import Vue from "vue";
 
+import Date from "../components/svg-components/date.vue";
+
 export default Vue.extend({
-  async created() {
-    console.log(this.issueItem);
-  },
   props: {
     issueItem: {
       type: Object,
       required: true,
     },
+  },
+  components: {
+    Date,
   },
 });
 </script>

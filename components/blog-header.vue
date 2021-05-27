@@ -1,11 +1,11 @@
 <template>
-  <header class="flex items-center py-8 xl:py-16">
-    <h1 class="text-4xl font-bold italic transform hover:translate-y-1">
+  <header class="flex items-center py-6 md:py-8 lg:py-10 xl:py-12">
+    <h1 class="text-4xl font-bold transform hover:translate-y-1">
       <NuxtLink to="/">chenkun8651</NuxtLink>
     </h1>
     <div class="flex-1"></div>
     <div
-      class="relative overflow-hidden w-8 h-8 transition-colors rounded cursor-pointer text-gray-600 hover:bg-gray-200 dark:text-primary dark:hover:bg-gray-800"
+      class="relative w-8 h-8 overflow-hidden transition-colors rounded cursor-pointer text-gray-600 hover:bg-gray-200 dark:text-primary dark:hover:bg-gray-800"
       @click="onToggle()"
     >
       <div class="absolute inset-0 flex items-center justify-center">

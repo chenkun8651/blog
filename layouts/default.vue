@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16">
+  <div class="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
     <BlogHeader></BlogHeader>
     <Nuxt />
     <BlogFooter></BlogFooter>

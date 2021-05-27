@@ -14,27 +14,23 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
 
-import { queryPostByNumber } from "../../utils/service.ts";
+import { queryPostByNumber } from "../../utils/service";
+import { RepositoryIssue } from "../../types/interface";
 
 export default Vue.extend({
   async created() {
-    // 截取地址中issueID
     this.issueID = ~~window.location.pathname.split("issue/")[1];
-    // 获取issue详情
     const res = await queryPostByNumber(this.issueID);
-    this.issue = res.repository.issue;
+    this.issue = res;
+    console.log(this.issue);
   },
   data() {
     return {
-      issueID: null,
-      issue: {
-        title: null,
-        url: null,
-        bodyHTML: null,
-      },
+      issueID: 0 as number,
+      issue: {} as RepositoryIssue,
     };
   },
 });

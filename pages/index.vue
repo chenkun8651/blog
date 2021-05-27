@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex flex-col lg:flex-row lg:pt-28">
+  <div class="container flex flex-col lg:flex-row">
     <BlogUser></BlogUser>
     <IssueList></IssueList>
   </div>

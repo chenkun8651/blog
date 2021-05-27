@@ -1,8 +1,8 @@
-import graphql from './graphql'
-import { RepositoryIssue, RepositoryIssues } from '../types/interface'
+import graphql from "./graphql";
+import { RepositoryIssue, RepositoryIssues } from "../types/interface";
 
-export const REPO_OWNER = 'chenkun8651'
-export const REPO_NAME = 'blog'
+export const REPO_OWNER = "chenkun8651";
+export const REPO_NAME = "blog";
 
 // 查询Issues列表
 export const queryPostsFromIssues = () =>
@@ -35,7 +35,7 @@ export const queryPostsFromIssues = () =>
         }
       }
     }
-  `)
+  `);
 
 // 根据label查询Issues列表
 export const queryPostsByLabel = (label: string[]) =>
@@ -70,9 +70,9 @@ export const queryPostsByLabel = (label: string[]) =>
       }
     `,
     {
-      label,
+      label
     }
-  )
+  );
 
 // 根据number获取Issues详情
 export const queryPostByNumber = (number: number) =>
@@ -97,6 +97,6 @@ export const queryPostByNumber = (number: number) =>
     }
   `,
     {
-      number,
+      number
     }
-  )
+  );

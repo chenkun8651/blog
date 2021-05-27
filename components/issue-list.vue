@@ -1,6 +1,6 @@
 <template>
-  <aside class="flex-1 lg:ml-8">
-    <div class="mb-8" v-for="(value, index) in issueList" :key="index">
+  <aside class="flex-1 lg:mx-4">
+    <div v-for="(value, index) in issueList" :key="index">
       <IssueItem :issueItem="value"></IssueItem>
     </div>
   </aside>
