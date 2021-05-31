@@ -43,12 +43,13 @@ export default {
   build: {},
 
   env: {
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+    CLIENT_ID: process.env.CLIENT_ID,
+    CLIENT_SECRETS: process.env.CLIENT_SECRETS,
   },
 
-  // dayjs插件
   dayjs: {
     locales: ["zh", "en"],
-    defaultLocale: "zh"
+    defaultLocale: "zh",
   }
 };

@@ -34,15 +34,17 @@
     </section>
     <article class="markdown-body max-w-3xl mx-auto md:p-8 mt-16">
       <div class="markdown-body-content mb-16" v-html="issue.bodyHTML"></div>
+      <div id="gitalk-container"></div>
     </article>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import Gitalk from "gitalk";
 
 import Date from "../../components/svg-components/date.vue";
-import { queryPostByNumber } from "../../utils/service";
+import { queryPostByNumber, REPO_OWNER, REPO_NAME } from "../../utils/service";
 import { IssueContent } from "../../types/interface";
 
 export default Vue.extend({
@@ -51,6 +53,15 @@ export default Vue.extend({
       this.issue.number = ~~window.location.pathname.split("issue/")[1];
       const res = await queryPostByNumber(this.issue.number);
       this.issue = res.repository.issue;
+      const gitalk = new Gitalk({
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRETS,
+        repo: REPO_NAME,
+        owner: REPO_OWNER,
+        admin: [REPO_OWNER],
+        number: this.issue.number,
+      });
+      gitalk.render("gitalk-container");
     }
   },
   data() {

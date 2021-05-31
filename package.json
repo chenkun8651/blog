@@ -19,6 +19,7 @@
     "@primer/primitives": "^4.3.6",
     "core-js": "^3.9.1",
     "dotenv": "^9.0.2",
+    "gitalk": "^1.7.2",
     "nprogress": "^0.2.0",
     "nuxt": "^2.15.3"
   },
