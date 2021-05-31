@@ -16,8 +16,10 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "@octokit/graphql": "^4.5.8",
     "@primer/css": "^17.0.1",
+    "@primer/primitives": "^4.3.6",
     "core-js": "^3.9.1",
     "dotenv": "^9.0.2",
+    "nprogress": "^0.2.0",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {

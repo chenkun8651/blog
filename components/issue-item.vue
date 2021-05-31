@@ -3,11 +3,13 @@
     <div class="mb-2 flex items-center justify-start">
       <div class="flex items-center">
         <Date></Date>
-        <div class="ml-0.5 mr-3 text-sm text-gray-700">
+        <div
+          class="ml-1 mr-3 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50"
+        >
           {{ this.$dayjs(issueItem.createdAt).format("YYYY年 MM月DD日") }}
         </div>
       </div>
-      <div class="text-sm text-gray-100">
+      <div class="text-sm text-gray-100 hover:text-gray-50">
         <div
           class="px-2 rounded"
           v-for="(value, index) in issueItem.labels.nodes"

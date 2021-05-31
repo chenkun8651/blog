@@ -1,4 +1,7 @@
+@import "~@primer/css/markdown";
+
 @import "./theme.scss";
+@import "./code-highlight.scss";
 
 @tailwind base;
 @tailwind components;
@@ -8,4 +11,31 @@ body {
   color: var(--color-text-primary);
   background-color: var(--color-bg-canvas);
   @apply transition-colors;
+}
+
+.dark img {
+  filter: grayscale(30%);
+}
+
+.markdown-body {
+  max-width: 846px;
+  a {
+    color: var(--color-text-link);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  code {
+    &:after,
+    &:before {
+      letter-spacing: -0.2em;
+      content: " ";
+    }
+  }
+}
+
+#nprogress .bar {
+  background: #0366d6 !important;
 }
