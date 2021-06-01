@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  // 设置页面请求头
   head: {
     title: "chenkun8651",
     htmlAttrs: {
@@ -13,21 +14,16 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/assets/styles/global.scss"],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "@/plugins/router.js", ssr: false }],
-
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    "@nuxt/typescript-build",
-    "@nuxtjs/tailwindcss"
-  ],
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  // 全局css样式的引入
+  css: ["nprogress/nprogress.css", "@/assets/styles/global.scss"],
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // 全局plugins插件的引入
+  plugins: [{ src: "@/plugins/router.js", ssr: false }],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -36,18 +32,27 @@ export default {
     "@nuxtjs/dayjs"
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    "@nuxt/typescript-build",
+    "@nuxtjs/tailwindcss"
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {},
+
+  // 全局环境变量
   env: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
     CLIENT_ID: process.env.CLIENT_ID,
     CLIENT_SECRETS: process.env.CLIENT_SECRETS
   },
 
+  // dayjs插件设置
   dayjs: {
     locales: ["zh", "en"],
     defaultLocale: "zh"
