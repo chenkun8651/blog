@@ -5,6 +5,16 @@
     </h1>
     <div class="flex-1"></div>
     <div
+      class="relative mr-2 w-8 h-8 overflow-hidden transition-colors rounded cursor-pointer text-gray-600 hover:bg-gray-200 dark:text-primary dark:hover:bg-gray-800"
+    >
+      <NuxtLink
+        class="absolute inset-0 flex items-center justify-center"
+        to="/"
+      >
+        <Home></Home>
+      </NuxtLink>
+    </div>
+    <div
       class="relative w-8 h-8 overflow-hidden transition-colors rounded cursor-pointer text-gray-600 hover:bg-gray-200 dark:text-primary dark:hover:bg-gray-800"
       @click="onToggle()"
     >
@@ -21,6 +31,7 @@ import Vue from "vue";
 
 import LightDay from "../components/svg-components/light-day.vue";
 import NightDay from "../components/svg-components/night-day.vue";
+import Home from "../components/svg-components/home.vue";
 
 export default Vue.extend({
   created() {
@@ -40,11 +51,13 @@ export default Vue.extend({
   components: {
     LightDay,
     NightDay,
+    Home,
   },
   methods: {
     onToggle(): void {
       this.themeState = this.themeState === "light" ? "dark" : "light";
       document.documentElement.className = this.themeState;
+      document.documentElement.className = 'animate';
     },
   },
 });

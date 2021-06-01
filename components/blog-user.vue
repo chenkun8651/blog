@@ -6,6 +6,7 @@
         src="../assets/img/avatar.png"
       />
       <div class="text-sm font-semibold">
+        <p>欢迎来到我博客~</p>
         <p>better late than never~</p>
         <div class="flex items-center mt-3">
           <a href="https://github.com/chenkun8651" target="_blank">

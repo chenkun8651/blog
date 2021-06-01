@@ -40,3 +40,19 @@ body {
 #nprogress .bar {
   background: #0366d6 !important;
 }
+
+.animate {
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-name: fadeRoute;
+}
+@keyframes fadeRoute {
+  from {
+    background-color: red;
+    opacity: 0;
+  }
+  to {
+    background-color: black;
+    opacity: 1;
+  }
+}
