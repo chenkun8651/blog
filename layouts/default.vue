@@ -3,7 +3,6 @@
     <BlogHeader></BlogHeader>
     <Nuxt />
     <BlogFooter></BlogFooter>
-    <input type="text" placeholder="" />
   </div>
 </template>
 
