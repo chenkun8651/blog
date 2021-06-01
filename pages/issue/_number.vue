@@ -50,16 +50,16 @@ import { IssueContent } from "../../types/interface";
 export default Vue.extend({
   async created() {
     if (process.browser) {
-      this.issue.number = ~~window.location.pathname.split("issue/")[1];
+      this.issue.number = ~~this.$route.params.number;
       const res = await queryPostByNumber(this.issue.number);
       this.issue = res.repository.issue;
       const gitalk = new Gitalk({
-        clientID: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRETS,
-        repo: REPO_NAME,
-        owner: REPO_OWNER,
-        admin: [REPO_OWNER],
-        number: this.issue.number,
+        clientID: process.env.CLIENT_ID as string,
+        clientSecret: process.env.CLIENT_SECRETS as string,
+        repo: REPO_NAME as string,
+        owner: REPO_OWNER as string,
+        admin: [REPO_OWNER] as string[],
+        number: this.issue.number as number,
       });
       gitalk.render("gitalk-container");
     }

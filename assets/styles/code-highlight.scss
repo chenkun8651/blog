@@ -63,7 +63,7 @@
   }
 
   .pl-c2::before /* carriage-return */ {
-    content: '^M';
+    content: "^M";
   }
 
   .pl-sr .pl-cce /* string.regexp constant.character.escape */ {

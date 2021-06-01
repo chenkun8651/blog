@@ -19,7 +19,7 @@ import { Issues } from "../../types/interface";
 export default Vue.extend({
   async created() {
     if (process.browser) {
-      this.label.push(window.location.pathname.split("label/")[1]);
+      this.label.push(this.$route.params.label);
       const res = await queryPostsByLabel(this.label);
       this.issueList = res.repository.issues;
     }

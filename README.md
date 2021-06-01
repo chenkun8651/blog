@@ -11,7 +11,7 @@ $ npm install
 # 启动项目，端口号3000，模式为热加载
 $ npm run dev
 
-# build for production 
+# build for production
 # 构建项目，生产文件
 $ npm run build
 
@@ -23,5 +23,3 @@ $ npm run start
 # 生产静态项目
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

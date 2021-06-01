@@ -17,7 +17,7 @@ export default {
   css: ["@/assets/styles/global.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/router.js", ssr: false }],
+  plugins: [{ src: "@/plugins/router.js", ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -45,11 +45,11 @@ export default {
   env: {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
     CLIENT_ID: process.env.CLIENT_ID,
-    CLIENT_SECRETS: process.env.CLIENT_SECRETS,
+    CLIENT_SECRETS: process.env.CLIENT_SECRETS
   },
 
   dayjs: {
     locales: ["zh", "en"],
-    defaultLocale: "zh",
+    defaultLocale: "zh"
   }
 };
