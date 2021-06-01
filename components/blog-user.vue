@@ -6,10 +6,11 @@
         src="../assets/img/avatar.png"
       />
       <div class="text-sm font-semibold">
-        <p>天青色等烟雨~</p>
-        <p>而我在等你~</p>
+        <p>better late than never~</p>
         <div class="flex items-center mt-3">
-          <Github></Github>
+          <a href="https://github.com/chenkun8651" target="_blank">
+            <Github></Github>
+          </a>
         </div>
       </div>
     </div>

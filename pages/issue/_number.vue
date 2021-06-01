@@ -60,6 +60,7 @@ export default Vue.extend({
         owner: REPO_OWNER as string,
         admin: [REPO_OWNER] as string[],
         number: this.issue.number as number,
+        language: "zh-CN",
       });
       gitalk.render("gitalk-container");
     }

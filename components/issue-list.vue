@@ -1,5 +1,5 @@
 <template>
-  <aside class="flex-1 lg:mx-4">
+  <aside class="flex-1 lg:mx-5">
     <div v-for="(value, index) in issueList.nodes" :key="index">
       <IssueItem :issueItem="value"></IssueItem>
     </div>
