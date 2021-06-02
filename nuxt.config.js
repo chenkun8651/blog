@@ -18,11 +18,18 @@ export default {
   components: true,
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  // 全局css样式的引入
-  css: ["nprogress/nprogress.css", "@/assets/styles/global.scss"],
+  // 样式文件管理
+  css: [
+    "nprogress/nprogress.css",
+    "@primer/css/markdown/index.scss",
+    "~/assets/styles/theme.scss",
+    "~/assets/styles/gitalk.scss",
+    "~/assets/styles/code-highlight.scss",
+    "~/assets/styles/global.scss"
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  // 全局plugins插件的引入
+  // 全局plugins插件
   plugins: [{ src: "@/plugins/router.js", ssr: false }],
 
   // Modules: https://go.nuxtjs.dev/config-modules

@@ -2,15 +2,6 @@ export interface Repository<T> {
   repository: T;
 }
 
-export interface Issues {
-  nodes: IssueContentBaseFields[];
-  pageInfo: {
-    hasNextPage: boolean;
-    endCursor: string;
-  };
-  totalCount: number;
-}
-
 export interface Label {
   name: string;
   color: string;
@@ -28,10 +19,19 @@ export interface IssueContentBaseFields {
   labels: Labels;
 }
 
+export interface Issues {
+  nodes: IssueContentBaseFields[];
+  pageInfo: {
+    hasNextPage: boolean;
+    endCursor: string;
+  };
+  totalCount: number;
+}
+
 export interface IssueContent extends IssueContentBaseFields {
   url: string;
   bodyHTML: string;
 }
 
-export type RepositoryIssue = Repository<{ issue: IssueContent }>;
 export type RepositoryIssues = Repository<{ issues: Issues }>;
+export type RepositoryIssue = Repository<{ issue: IssueContent }>;

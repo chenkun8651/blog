@@ -57,7 +57,6 @@ export default Vue.extend({
     onToggle(): void {
       this.themeState = this.themeState === "light" ? "dark" : "light";
       document.documentElement.className = this.themeState;
-      document.documentElement.className = 'animate';
     },
   },
 });

@@ -78,7 +78,7 @@ export const queryPostsByLabel = (label: string[]) =>
 export const queryPostByNumber = (number: number) =>
   graphql<RepositoryIssue>(
     `
-    query queryIssueByNumber($number: Int!) {
+     query queryIssueByNumber($number: Int!) {
       repository(owner: "${REPO_OWNER}", name: "${REPO_NAME}") {
         issue(number: $number) {
           number

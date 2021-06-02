@@ -1,9 +1,3 @@
-@import "~@primer/css/markdown";
-
-@import "./theme.scss";
-@import "./gitalk.scss";
-@import "./code-highlight.scss";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,10 +6,6 @@ body {
   color: var(--color-text-primary);
   background-color: var(--color-bg-canvas);
   @apply transition-colors;
-}
-
-.dark img {
-  filter: grayscale(30%);
 }
 
 .markdown-body {
@@ -38,21 +28,5 @@ body {
 }
 
 #nprogress .bar {
-  background: #0366d6 !important;
-}
-
-.animate {
-  animation-duration: 5s;
-  animation-fill-mode: both;
-  animation-name: fadeRoute;
-}
-@keyframes fadeRoute {
-  from {
-    background-color: red;
-    opacity: 0;
-  }
-  to {
-    background-color: black;
-    opacity: 1;
-  }
+  background-color: #0366d6 !important;
 }
