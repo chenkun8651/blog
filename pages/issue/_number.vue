@@ -16,7 +16,14 @@
       </div>
       <h1 class="my-4 text-3xl font-bold">{{ issue.title }}</h1>
       <div
-        class="flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50"
+        class="
+          flex
+          items-center
+          text-sm text-gray-600
+          hover:text-gray-900
+          dark:text-gray-200
+          dark:hover:text-gray-50
+        "
       >
         <Date></Date>
         <div class="ml-1 mr-5 my-1">
@@ -48,36 +55,28 @@ import { queryPostByNumber, REPO_OWNER, REPO_NAME } from "../../utils/service";
 import { IssueContent } from "../../types/interface";
 
 export default Vue.extend({
-  async created() {
-    if (process.browser) {
-      this.issue.number = ~~this.$route.params.number;
-      const res = await queryPostByNumber(this.issue.number);
-      this.issue = res.repository.issue;
-      const gitalk = new Gitalk({
-        clientID: process.env.CLIENT_ID as string,
-        clientSecret: process.env.CLIENT_SECRETS as string,
-        repo: REPO_NAME as string,
-        owner: REPO_OWNER as string,
-        admin: [REPO_OWNER] as string[],
-        number: this.issue.number as number,
-        language: "zh-CN",
-      });
-      gitalk.render("gitalk-container");
-    }
+  async asyncData(context) {
+    const issueNumber: number = ~~context.route.params.number;
+    const issue:IssueContent = (await queryPostByNumber(issueNumber)).repository.issue;
+    return {
+      issue,
+    };
+  },
+  mounted() {
+    const gitalk = new Gitalk({
+      clientID: process.env.CLIENT_ID as string,
+      clientSecret: process.env.CLIENT_SECRETS as string,
+      repo: REPO_NAME as string,
+      owner: REPO_OWNER as string,
+      admin: [REPO_OWNER] as string[],
+      number: this.issue.number as number,
+      language: "zh-CN",
+    });
+    gitalk.render("gitalk-container");
   },
   data() {
     return {
-      issue: {
-        number: 0,
-        title: "",
-        createdAt: "",
-        updatedAt: "",
-        labels: {
-          nodes: [],
-        },
-        url: "",
-        bodyHTML: "",
-      } as IssueContent,
+      issue: {} as IssueContent,
     };
   },
   components: {

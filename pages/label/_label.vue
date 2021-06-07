@@ -17,24 +17,13 @@ import { queryPostsByLabel } from "../../utils/service";
 import { Issues } from "../../types/interface";
 
 export default Vue.extend({
-  async created() {
-    if (process.browser) {
-      this.label.push(this.$route.params.label);
-      const res = await queryPostsByLabel(this.label);
-      this.issueList = res.repository.issues;
-    }
-  },
-  data() {
+  async asyncData(context) {
+    const label: string[] = [];
+    label.push(context.route.params.label);
+    const issueList: Issues = (await queryPostsByLabel(label)).repository.issues;
     return {
-      label: [] as string[],
-      issueList: {
-        nodes: [],
-        pageInfo: {
-          hasNextPage: true,
-          endCursor: "",
-        },
-        totalCount: 0,
-      } as Issues,
+      label,
+      issueList,
     };
   },
   components: {
