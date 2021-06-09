@@ -1,6 +1,6 @@
 <template>
   <header class="flex items-center py-6 md:py-8 lg:py-10 xl:py-12">
-    <h1 class="text-4xl font-bold transform hover:translate-y-1">
+    <h1 class="text-4xl font-bold">
       <NuxtLink to="/">chenkun8651</NuxtLink>
     </h1>
     <div class="flex-1"></div>

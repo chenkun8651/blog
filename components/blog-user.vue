@@ -15,7 +15,7 @@
           xl:w-24
           xl:h-24
         "
-        src="../assets/img/avatar.png"
+        src="~images/avatar.png"
       />
       <div class="text-sm font-semibold">
         <p>欢迎来到我博客~</p>
