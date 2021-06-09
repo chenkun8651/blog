@@ -49,7 +49,6 @@
 <script lang="ts">
 import Vue from "vue";
 import Gitalk from "gitalk";
-
 import Date from "../../components/svg-components/date.vue";
 import { queryPostByNumber, REPO_OWNER, REPO_NAME } from "../../utils/service";
 import { IssueContent } from "../../types/interface";
@@ -57,7 +56,7 @@ import { IssueContent } from "../../types/interface";
 export default Vue.extend({
   async asyncData(context) {
     const issueNumber: number = ~~context.route.params.number;
-    const issue:IssueContent = (await queryPostByNumber(issueNumber)).repository.issue;
+    const issue: IssueContent = (await queryPostByNumber(issueNumber)).repository.issue;
     return {
       issue,
     };

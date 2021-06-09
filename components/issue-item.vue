@@ -4,7 +4,14 @@
       <div class="flex items-center">
         <Date></Date>
         <div
-          class="ml-1 mr-3 text-sm text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50"
+          class="
+            ml-1
+            mr-3
+            text-sm text-gray-600
+            hover:text-gray-900
+            dark:text-gray-200
+            dark:hover:text-gray-50
+          "
         >
           {{ this.$dayjs(issueItem.createdAt).format("YYYY年 MM月DD日") }}
         </div>
@@ -32,7 +39,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-
 import Date from "../components/svg-components/date.vue";
 
 export default Vue.extend({

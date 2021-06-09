@@ -7,7 +7,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-
 import BlogUser from "../components/blog-user.vue";
 import IssueList from "../components/issue-list.vue";
 import { queryPostsFromIssues } from "../utils/service";

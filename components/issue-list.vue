@@ -8,12 +8,14 @@
 
 <script lang="ts">
 import Vue from "vue";
-
 import IssueItem from "./issue-item.vue";
 
 export default Vue.extend({
   props: {
-    issueList: Object,
+    issueList: {
+      type: Object,
+      required: true,
+    },
   },
   components: {
     IssueItem,

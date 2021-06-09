@@ -5,7 +5,20 @@
     </h1>
     <div class="flex-1"></div>
     <div
-      class="relative mr-2 w-8 h-8 overflow-hidden transition-colors rounded cursor-pointer text-gray-600 hover:bg-gray-200 dark:text-primary dark:hover:bg-gray-800"
+      class="
+        relative
+        mr-2
+        w-8
+        h-8
+        overflow-hidden
+        transition-colors
+        rounded
+        cursor-pointer
+        text-gray-600
+        hover:bg-gray-200
+        dark:text-primary
+        dark:hover:bg-gray-800
+      "
     >
       <NuxtLink
         class="absolute inset-0 flex items-center justify-center"
@@ -15,7 +28,19 @@
       </NuxtLink>
     </div>
     <div
-      class="relative w-8 h-8 overflow-hidden transition-colors rounded cursor-pointer text-gray-600 hover:bg-gray-200 dark:text-primary dark:hover:bg-gray-800"
+      class="
+        relative
+        w-8
+        h-8
+        overflow-hidden
+        transition-colors
+        rounded
+        cursor-pointer
+        text-gray-600
+        hover:bg-gray-200
+        dark:text-primary
+        dark:hover:bg-gray-800
+      "
       @click="onToggle()"
     >
       <div class="absolute inset-0 flex items-center justify-center">
@@ -28,7 +53,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-
 import LightDay from "../components/svg-components/light-day.vue";
 import NightDay from "../components/svg-components/night-day.vue";
 import Home from "../components/svg-components/home.vue";

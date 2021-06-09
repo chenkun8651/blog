@@ -3,17 +3,20 @@
     <BlogHeader></BlogHeader>
     <Nuxt />
     <BlogFooter></BlogFooter>
+    <MusicBox></MusicBox>
   </div>
 </template>
 
 <script lang="ts">
 import BlogHeader from "../components/blog-header.vue";
 import BlogFooter from "../components/blog-footer.vue";
+import MusicBox from "../components/music-box.vue";
 
 export default {
   components: {
     BlogHeader,
     BlogFooter,
+    MusicBox,
   },
 };
 </script>
