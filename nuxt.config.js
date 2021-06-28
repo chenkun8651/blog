@@ -64,7 +64,7 @@ export default {
     ],
   },
   /**
-   * nuxtjs的插件
+   * 插件
    * https://go.nuxtjs.dev/config-plugins
    */
   plugins: [
@@ -101,9 +101,9 @@ export default {
     CLIENT_ID: process.env.CLIENT_ID,
     CLIENT_SECRETS: process.env.CLIENT_SECRETS,
   },
-  // axios模块配置: https://go.nuxtjs.dev/config-axios
+  // axios模块配置
   axios: {},
-  // dayjs模块配置:
+  // dayjs模块配置
   dayjs: {
     locales: ["zh", "en"],
     defaultLocale: "zh",
