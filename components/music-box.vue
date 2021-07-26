@@ -16,7 +16,6 @@ export default Vue.extend({
       password: "chenkun@0508",
     };
     const user = await musicLoginByPhone(params);
-    console.log(user);
   },
 });
 </script>

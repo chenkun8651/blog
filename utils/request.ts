@@ -1,14 +1,13 @@
 import axios from "./axios";
 import { LoginByPhone } from "../types/interface";
+import { paramsToString } from "../utils/tool";
 
-export const MUSIC_URL = `https://chenkun8561musicapi.vercel.app/`;
+export const MUSIC_URL = `https://chenkun8561musicapi.vercel.app`;
 
 // 手机登录网易云音乐
-export const musicLoginByPhone = (params: LoginByPhone): any => {
+export function musicLoginByPhone(params: LoginByPhone): any {
   return axios({
     method: "get",
-    url:
-      MUSIC_URL +
-      `login/cellphone?phone=${params.phone}&password=${params.password}`
+    url: `${MUSIC_URL}/login/cellphone${paramsToString(params)}`
   });
-};
+}
