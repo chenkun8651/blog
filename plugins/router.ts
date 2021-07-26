@@ -10,12 +10,12 @@ NProgress.configure({
   trickleSpeed: 200, // 自动递增间隔
   minimum: 0.3 // 初始化时的最小百分比
 });
-export default ({ app }) => {
-  app.router.afterEach((to, from, next) => {
+export default (context: any) => {
+  context.app.router.afterEach((to: any, from: any, next: any) => {
     NProgress.start();
     next;
   });
-  app.router.afterEach((to, form) => {
+  context.app.router.afterEach((to: any, form: any) => {
     NProgress.done();
   });
 };

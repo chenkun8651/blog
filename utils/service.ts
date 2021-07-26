@@ -6,8 +6,8 @@ export const REPO_NAME = "blog";
 
 // 查询Issues列表
 export const queryPostsFromIssues = () =>
-  graphql<RepositoryIssues>(`
-    {
+  graphql<RepositoryIssues>(
+    `{
       repository(owner: "${REPO_OWNER}", name: "${REPO_NAME}") {
         issues(
           states: CLOSED
@@ -34,14 +34,13 @@ export const queryPostsFromIssues = () =>
           totalCount
         }
       }
-    }
-  `);
+    }`
+  );
 
 // 根据label查询Issues列表
 export const queryPostsByLabel = (label: string[]) =>
   graphql<RepositoryIssues>(
-    `
-      query queryIssuesByLabel($label: [String!]) {
+    `query queryIssuesByLabel($label: [String!]) {
         repository(owner: "${REPO_OWNER}", name: "${REPO_NAME}") {
           issues(
             states: CLOSED
@@ -67,8 +66,7 @@ export const queryPostsByLabel = (label: string[]) =>
             totalCount
           }
         }
-      }
-    `,
+      }`,
     {
       label
     }
@@ -77,8 +75,7 @@ export const queryPostsByLabel = (label: string[]) =>
 // 根据number获取Issues详情
 export const queryPostByNumber = (number: number) =>
   graphql<RepositoryIssue>(
-    `
-     query queryIssueByNumber($number: Int!) {
+    `query queryIssueByNumber($number: Int!) {
       repository(owner: "${REPO_OWNER}", name: "${REPO_NAME}") {
         issue(number: $number) {
           number
@@ -94,8 +91,7 @@ export const queryPostByNumber = (number: number) =>
           }
         }
       }
-    }
-  `,
+    }`,
     {
       number
     }

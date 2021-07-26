@@ -6,15 +6,17 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { LoginByPhone } from "./../types/interface";
+import { musicLoginByPhone } from "../utils/request";
 
 export default Vue.extend({
   async mounted() {
-    const params = {
-      phone: "15208102681",
-      password: "783c8eb6f403c46e60fdb10d133aeb0b",
+    const params: LoginByPhone = {
+      phone: 15208102681,
+      password: "chenkun@0508",
     };
-    // const user = await this.$api.musicLoginByPhone(params);
-    // console.log(user);
+    const user = await musicLoginByPhone(params);
+    console.log(user);
   },
 });
 </script>

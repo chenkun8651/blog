@@ -20,7 +20,8 @@ export default Vue.extend({
   async asyncData(context) {
     const label: string[] = [];
     label.push(context.route.params.label);
-    const issueList: Issues = (await queryPostsByLabel(label)).repository.issues;
+    const issueList: Issues = (await queryPostsByLabel(label)).repository
+      .issues;
     return {
       label,
       issueList,

@@ -56,19 +56,21 @@ import { IssueContent } from "../../types/interface";
 export default Vue.extend({
   async asyncData(context) {
     const issueNumber: number = ~~context.route.params.number;
-    const issue: IssueContent = (await queryPostByNumber(issueNumber)).repository.issue;
+    const issue: IssueContent = (await queryPostByNumber(issueNumber))
+      .repository.issue;
     return {
       issue,
     };
   },
   mounted() {
+    // 评论框
     const gitalk = new Gitalk({
       clientID: process.env.CLIENT_ID as string,
       clientSecret: process.env.CLIENT_SECRETS as string,
-      repo: REPO_NAME as string,
-      owner: REPO_OWNER as string,
-      admin: [REPO_OWNER] as string[],
-      number: this.issue.number as number,
+      repo: REPO_NAME,
+      owner: REPO_OWNER,
+      admin: [REPO_OWNER],
+      number: this.issue.number,
       language: "zh-CN",
     });
     gitalk.render("gitalk-container");

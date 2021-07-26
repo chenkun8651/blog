@@ -1,37 +1,39 @@
 export interface Repository<T> {
   repository: T;
 }
-
-export interface Label {
+export interface LabelContent {
   name: string;
   color: string;
 }
-
 export interface Labels {
-  nodes: Label[];
+  nodes: LabelContent[];
 }
-
-export interface IssueContentBaseFields {
+export interface IssueContent {
   number: number;
   title: string;
   createdAt: string;
   updatedAt: string;
   labels: Labels;
 }
-
 export interface Issues {
-  nodes: IssueContentBaseFields[];
+  nodes: IssueContent[];
   pageInfo: {
     hasNextPage: boolean;
     endCursor: string;
   };
   totalCount: number;
 }
-
-export interface IssueContent extends IssueContentBaseFields {
+export interface IssueContentHtml extends IssueContent {
   url: string;
   bodyHTML: string;
 }
 
+export type RepositoryIssue = Repository<{ issue: IssueContentHtml }>;
 export type RepositoryIssues = Repository<{ issues: Issues }>;
-export type RepositoryIssue = Repository<{ issue: IssueContent }>;
+
+export interface LoginByPhone {
+  phone: number;
+  password: string;
+  countrycode?: number;
+  md5_password?: string;
+}

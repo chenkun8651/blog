@@ -69,11 +69,7 @@ export default {
    */
   plugins: [
     {
-      src: "@/plugins/router.js",
-      ssr: false
-    },
-    {
-      src: "@/plugins/api.js",
+      src: "@/plugins/router.ts",
       ssr: false
     },
   ],
