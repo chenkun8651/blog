@@ -1,6 +1,6 @@
 import axios from "./axios";
 import { LoginByPhone } from "../types/interface";
-import { paramsToString } from "../utils/tool";
+import { getParamsToString } from "../utils/tool";
 
 export const MUSIC_URL = `https://chenkun8561musicapi.vercel.app`;
 
@@ -8,6 +8,6 @@ export const MUSIC_URL = `https://chenkun8561musicapi.vercel.app`;
 export function musicLoginByPhone(params: LoginByPhone): any {
   return axios({
     method: "get",
-    url: `${MUSIC_URL}/login/cellphone${paramsToString(params)}`
+    url: `${MUSIC_URL}/login/cellphone${getParamsToString(params)}`
   });
 }
