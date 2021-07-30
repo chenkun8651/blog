@@ -1,8 +1,8 @@
-# 我的博客
+# 博客项目
 
->地址：https://chenkun8651.vercel.app/
+>博客地址：<https://chenkun8651.vercel.app/>
 
-## 框架：Nuxt 项目
+## 框架：Nuxt
 
 ```bash
 # install dependencies
