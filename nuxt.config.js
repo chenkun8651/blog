@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 
 export default {
-  target: 'server',
+  target: 'static',
   /**
    * 允许在访问文件时使用别名访问自定义目录
    * 默认的别名，@和~路径<srcDir>，@@和~~路径<rootDir>
@@ -22,7 +22,7 @@ export default {
    */
   css: [
     "nprogress/nprogress.css",
-    // "@primer/css/markdown/index.scss",
+    "@primer/css/markdown/index.scss",
     "~/assets/styles/code-highlight.scss",
     "~/assets/styles/colors.scss",
     "~/assets/styles/gitalk.scss",
