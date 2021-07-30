@@ -1,10 +1,11 @@
 <template>
   <div class="container mx-auto">
     <section class="container max-w-6xl mt-5">
-      <div class="flex items-center text-sm">
-        Tag »
+      <div class="flex items-center text-xl">
+        <span class="rounded px-2 bg-pink-500 text-gray-100"> Tag </span>
+        <span class="mx-2 text-2xl">»</span>
         <span
-          class="rounded px-2 ml-2 text-gray-100 hover:text-gray-50"
+          class="rounded px-2 text-gray-100"
           v-for="(value, index) in issue.labels.nodes"
           :key="index"
           :style="{ backgroundColor: '#' + value.color }"

@@ -16,7 +16,7 @@
           {{ this.$dayjs(issueItem.createdAt).format("YYYY年 MM月DD日") }}
         </div>
       </div>
-      <div class="text-sm text-gray-100 hover:text-gray-50">
+      <div class="text-xl text-gray-100">
         <div
           class="px-2 rounded"
           v-for="(value, index) in issueItem.labels.nodes"

@@ -21,10 +21,10 @@ export default {
    */
   css: [
     "nprogress/nprogress.css",
-    "@primer/css/markdown/index.scss",
-    "~/assets/styles/theme.scss",
-    "~/assets/styles/gitalk.scss",
+    // "@primer/css/markdown/index.scss",
     "~/assets/styles/code-highlight.scss",
+    "~/assets/styles/colors.scss",
+    "~/assets/styles/gitalk.scss",
     "~/assets/styles/global.scss"
   ],
   /** 
