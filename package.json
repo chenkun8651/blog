@@ -42,5 +42,11 @@
     "sass": "^1.32.12",
     "sass-loader": "^10.2.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "10500"
+    }
   }
 }

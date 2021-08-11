@@ -28,7 +28,7 @@ export default {
     "~/assets/styles/gitalk.scss",
     "~/assets/styles/global.scss"
   ],
-  /** 
+  /**
    * 自动导入组件
    * https://zh.nuxtjs.org/docs/2.x/configuration-glossary/configuration-components
    */
