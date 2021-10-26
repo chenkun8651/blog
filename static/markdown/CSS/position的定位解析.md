@@ -1,6 +1,6 @@
 # CSS position元素定位属性　　
 
->关于css的位置属性其实在排版布局常常用，由此也衍生很多的功能，由于有个需求需要用到没有接触过的粘性定位，再学习了一番总结一下关于css的position属性的讲解，写了相关几个列子。
+>position属性在排版布局中常用于定位元素，因此也衍生出了很多的功能，由于有个需求需要用到没有接触过的粘性定位，就去学习了粘性定位。顺带总结了一下关于css中position属性的用法和实际列子。
 
 ## position的定义和语法
 
@@ -16,17 +16,18 @@
 可选赋值：
 
 static：默认值。元素根据正常的文档流进行排列，设置left，right，top，bottom，z-index值无效。
-relative：生成相对定位元素。元素根据正常的文档流进行排列，可以设置left，right，top，bottom调整在文档流中的 位置，设置z-index显示层级。table的部分元素不会生效。
 
-absolute：生成绝对定位元素。元素会被移除出正常的文档流，绝对定位元素会相对距离最近非static定位的元素进行偏移。设置left，right，top，bottom是对最近非static元素位置方向和偏移距离，设置z-index显示层级。
+relative：相对定位元素。元素根据正常的文档流进行排列，可以设置left，right，top，bottom调整在文档流中的位置，设置z-index显示层级，table的等部分元素不会生效。
 
-fixed：生成固定位置元素。元素会被移除出正常的文档流，相对浏览器视窗窗口进行固定定位，设置left，right，top，bottom规定相对浏览器视窗的位置。设置z-index显示层级。
+absolute：绝对定位元素。元素会被移除出正常的文档流，绝对定位元素会相对距离最近非static定位的元素进行偏移。设置left，right，top，bottom是对最近非static元素位置方向和偏移距离，设置z-index显示层级。
 
-sticky：生成粘性定位元素。相对最近的滚动祖先元素和块级祖先元素进行偏移，元素在跨越特定阈值前表现为相对定位（relative），跨越阈值后表现为固定定位（fixed）。left，right，top，bottom是粘性定位的阈值。
+fixed：固定位置元素。元素会被移除出正常的文档流，相对浏览器视窗窗口进行固定定位，设置left，right，top，bottom规定相对浏览器视窗的位置。设置z-index显示层级。
 
-## 示例
+sticky：粘性定位元素。相对最近的滚动祖先元素和块级祖先元素进行偏移，元素在跨越特定阈值前表现为相对定位（relative），跨越阈值后表现为固定定位（fixed）。left，right，top，bottom是粘性定位的阈值。
 
-### static、relative示例
+## position的示例
+
+### static、relative的示例
 
 static元素正常的文档流排列，设置了left，z-index但是没有作用。
 relative元素仍然排在正常文档流元素的后面，但是可以设置top，z-index值，top这些值决定了他与其他元素的位置，z-index决定了显示的层级。
@@ -65,6 +66,9 @@ CSS代码
     background-color: skyblue;
   }
 ```
+
+示例图
+![示例图一](https://raw.githubusercontent.com/chenkun8651/blog/file/data/2021_10_25_position1.gif)
 
 ### fixed示例
 
@@ -139,10 +143,13 @@ JS代码
   });
 ```
 
+示例图
+![示例图二](https://raw.githubusercontent.com/chenkun8651/blog/file/data/2021_10_25_position2.gif)
+
 ### sticky示例
 
 sticky粘性定位给人一种结合了relative和fixed效果的感觉，sticky元素在没有抵达设定的阈值之前，效果类似于relative元素，在普通文档流正常排列；当元素跨过这个阈值后，元素的表现形式又和fixed元素相似，形成固定定位。由于必须要设置阈值才能生效，所以必须设定left，right，top，bottom四个阈值其中之一。如果没有阈值，和relative元素效果一致。
-这是一个实验性质的属性，现在的浏览器中并没有太好的兼容性，使用前需要谨慎。
+这是一个实验性质的属性，现在的浏览器中并没有太好的兼容性，使用前需要查询浏览器版本兼容。
 
 HTML代码
 
@@ -201,6 +208,9 @@ CSS代码
   }
 ```
 
->本文内容学习参考来自
-[MDN：position基础讲解]<https://developer.mozilla.org/zh-CN/docs/Web/CSS/position>
-[sticky实际使用详解]<https://www.cnblogs.com/coco1s/p/6402723.html>
+示例图
+![示例图二](https://raw.githubusercontent.com/chenkun8651/blog/file/data/2021_10_25_position3.gif)
+
+>参考来自
+**MDN——position基础讲解：**<https://developer.mozilla.org/zh-CN/docs/Web/CSS/position>
+**sticky实际使用详解：**<https://www.cnblogs.com/coco1s/p/6402723.html>
